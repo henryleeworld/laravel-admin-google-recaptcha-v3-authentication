@@ -1,4 +1,4 @@
-# Laravel 6 後臺管理 Google reCAPTCHA v3 （以分數驗證要求）登入
+# Laravel 8 後臺管理 Google reCAPTCHA v3 （以分數驗證要求）登入
 
 在後臺登入頁面中確保只有擁有正確密碼的真人可以存取帳戶，以使用者行為做為判斷是否為自動化程式的基準，需要大量分析行為數據，網站使用者不再需要透過圖型驗證碼來證明自己不是機器人，而是透過在網站後段自動紀錄使用者在網站中瀏覽的行為過程，如果有類似在連絡表單中不斷提交重複文字之類的行為時，將會將其判定為機器人。
 
@@ -12,12 +12,21 @@ $ git clone
 ```sh
 $ composer install
 ```
-- 產⽣ Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
+- 產生 Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
 ```sh
 $ php artisan key:generate
 ```
+- 執行 __Artisan__ 指令的 __migrate__ 來執行所有未完成的遷移。
+```sh
+$ php artisan migrate
+```
+- 執行安裝 Laravel Mix 引用的依賴項目，並執行所有 Mix 任務。
+```sh
+$ npm install && npm run dev
+```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
-- 你可以登入經由 `/register` 來進行註冊。
+- 你可以經由 `/register` 來進行註冊。
+- 完成註冊後，可以經由 `/login` 來進行登入。
 
 ----
 
@@ -25,5 +34,5 @@ $ php artisan key:generate
 ![](https://i.imgur.com/m4mkHOH.png)
 > 申請 Google reCAPTCHA v3 人工智慧驗證機制
 
-![](https://i.imgur.com/1gRKVEX.png)
+![](https://i.imgur.com/nKLynkE.png)
 > 網站的右下角會有 Goolge reCAPTCHA 的標示，讓網站管理者知道 reCAPTCHA 已經啟用了
