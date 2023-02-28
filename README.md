@@ -1,4 +1,4 @@
-# Laravel 8 後臺管理 Google reCAPTCHA v3 （以分數驗證要求）登入
+# Laravel 10 後臺管理 Google reCAPTCHA v3 （以分數驗證要求）登入
 
 在後臺登入頁面中確保只有擁有正確密碼的真人可以存取帳戶，以使用者行為做為判斷是否為自動化程式的基準，需要大量分析行為數據，網站使用者不再需要透過圖型驗證碼來證明自己不是機器人，而是透過在網站後段自動紀錄使用者在網站中瀏覽的行為過程，如果有類似在連絡表單中不斷提交重複文字之類的行為時，將會將其判定為機器人。
 
@@ -20,9 +20,13 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate
 ```
-- 執行安裝 Laravel Mix 引用的依賴項目，並執行所有 Mix 任務。
+- 執行安裝 Vite 和 Laravel 擴充套件引用的依賴項目。
 ```sh
-$ npm install && npm run dev
+$ npm install
+```
+- 執行正式環境版本化資源管道並編譯。
+```sh
+$ npm run build
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/register` 來進行註冊。

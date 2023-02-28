@@ -8,23 +8,10 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.2.1/dist/alpine.js" defer></script>
-        {!! htmlScriptTagJsApi([
-            'action' => 'homepage',
-            'callback_then' => 'callbackThen',
-            'callback_catch' => 'callbackCatch'
-        ]) !!}
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
         <script type="text/javascript">
             function callbackThen(response){
                 // read HTTP status
@@ -39,5 +26,16 @@
                 console.error('Error:', error)
             }
         </script>
+        {!! htmlScriptTagJsApi([
+            'action' => 'dashboard',
+            'callback_then' => 'callbackThen',
+            'callback_catch' => 'callbackCatch'
+        ]) !!}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body>
+        <div class="font-sans text-gray-900 antialiased">
+            {{ $slot }}
+        </div>
     </body>
 </html>

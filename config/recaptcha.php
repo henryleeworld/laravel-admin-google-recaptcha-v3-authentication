@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2017 - present
  * LaravelGoogleRecaptcha - recaptcha.php
@@ -50,9 +51,10 @@ return [
     /**
      *
      * IP addresses for which validation will be skipped
+     * IP/CIDR netmask eg. 127.0.0.0/24, also 127.0.0.1 is accepted and /32 assumed
      *
      */
-    'skip_ip'                      => [],
+    'skip_ip'                      => env('RECAPTCHA_SKIP_IP', []),
 
     /**
      *
@@ -98,6 +100,35 @@ return [
      *
      */
     'explicit'                     => false,
+
+    /**
+     *
+     * Set API domain. You can use "www.recaptcha.net" in case "www.google.com" is not accessible.
+     * (no check will be made on the entered value)
+     * @see   https://developers.google.com/recaptcha/docs/faq#can-i-use-recaptcha-globally
+     * @since v4.3.0
+     * Default 'www.google.com' (ReCaptchaBuilder::DEFAULT_RECAPTCHA_API_DOMAIN)
+     *
+     */
+    'api_domain'                   => 'www.google.com',
+
+    /**
+     *
+     * Set `true` when the error message must be null
+     * @since v5.1.0
+     * Default false
+     *
+     */
+    'empty_message' => false,
+
+    /**
+     *
+     * Set either the error message or the errom message translation key
+     * @since v5.1.0
+     * Default 'validation.recaptcha'
+     *
+     */
+    'error_message_key' => 'validation.recaptcha',
 
     /**
      *
