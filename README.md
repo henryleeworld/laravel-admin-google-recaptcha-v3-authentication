@@ -35,8 +35,8 @@ $ npm run build
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/m4mkHOH.png)
+![](https://i.imgur.com/w1PQsGy.png)
 > 申請 Google reCAPTCHA v3 人工智慧驗證機制
 
-![](https://i.imgur.com/nKLynkE.png)
+![](https://i.imgur.com/EjiuVQi.png)
 > 網站的右下角會有 Goolge reCAPTCHA 的標示，讓網站管理者知道 reCAPTCHA 已經啟用了

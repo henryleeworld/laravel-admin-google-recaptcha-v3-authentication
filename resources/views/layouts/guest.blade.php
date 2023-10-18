@@ -10,8 +10,17 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+        <!-- Styles -->
+        @vite(['resources/css/app.css'])
+        @livewireStyles
+    </head>
+    <body>
+        <div class="font-sans text-gray-900 antialiased">
+            {{ $slot }}
+        </div>
         <!-- Scripts -->
+        @vite(['resources/js/app.js'])
+        @livewireScripts
         <script type="text/javascript">
             function callbackThen(response){
                 // read HTTP status
@@ -31,11 +40,5 @@
             'callback_then' => 'callbackThen',
             'callback_catch' => 'callbackCatch'
         ]) !!}
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
-            {{ $slot }}
-        </div>
     </body>
 </html>
