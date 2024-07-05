@@ -1,4 +1,4 @@
-# Laravel 10 後臺管理 Google reCAPTCHA v3 （以分數驗證要求）登入
+# Laravel 11 後臺管理 Google reCAPTCHA v3 （以分數驗證要求）登入
 
 在後臺登入頁面中確保只有擁有正確密碼的真人可以存取帳戶，以使用者行為做為判斷是否為自動化程式的基準，需要大量分析行為數據，網站使用者不再需要透過圖型驗證碼來證明自己不是機器人，而是透過在網站後段自動紀錄使用者在網站中瀏覽的行為過程，如果有類似在連絡表單中不斷提交重複文字之類的行為時，將會將其判定為機器人。
 
@@ -35,8 +35,8 @@ $ npm run build
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/w1PQsGy.png)
+![](https://i.imgur.com/sREN6zE.png)
 > 申請 Google reCAPTCHA v3 人工智慧驗證機制
 
-![](https://i.imgur.com/EjiuVQi.png)
+![](https://i.imgur.com/tIcPErZ.png)
 > 網站的右下角會有 Goolge reCAPTCHA 的標示，讓網站管理者知道 reCAPTCHA 已經啟用了
